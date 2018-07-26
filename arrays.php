@@ -22,8 +22,6 @@ $multiDimArray = [
     ]
 ];
 
-
-$name = "Francis";
 echo "<pre>";
 var_dump($multiDimArray);
 echo "</pre>";

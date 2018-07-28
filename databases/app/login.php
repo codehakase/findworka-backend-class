@@ -1,6 +1,6 @@
 <?php 
   require_once 'init.php';
-
+  $data = "fix";
 if (isset($_POST['login'])) {
   // fetch account with username 
   $account = $db->prepare("SELECT * FROM users WHERE username = :username LIMIT 1");

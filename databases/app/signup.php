@@ -10,11 +10,12 @@
     ]);
     if (sizeof($userExist->fetchAll()) < 1) {
       // user doesn't exist, create new one
-      $newUser = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+      $newUser = $db->prepare("INSERT INTO users (username, email, password, fullname) VALUES (:username, :email, :password, :fullname)");
       $newUser->execute([
         ':username' => $_POST['username'],
         ':email' => $_POST['email'],
-        ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT)
+        ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+        ':fullname' => $_POST['fullname']
       ]);
       if ($newUser) {
         // user created, redirect to login page
